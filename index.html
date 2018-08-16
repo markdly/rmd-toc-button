@@ -248,6 +248,10 @@ div.tocify {
 <button id="btnCollapseHeading" onclick="collapseTOC()">
 Collapse sub-headings
 </button>
+<p>If you only want to collapse level 3 headings press this button.</p>
+<button id="btnCollapseLevel3" onclick="collapseLevel3()">
+Collapse Level 3 only
+</button>
 <script>
 function collapseTOC() {
   var x = document.getElementsByClassName("tocify-subheader");
@@ -256,6 +260,17 @@ function collapseTOC() {
       x[i].style.display = "none";
   }
 }
+
+function collapseLevel3() {
+  var x = document.getElementsByClassName("tocify-subheader");
+  var i;
+  for (i = 0; i < x.length; i++) {
+      if (x[i].getAttribute("data-tag") == "3") {
+        x[i].style.display = "none";
+      }
+  }
+}
+
 </script>
 </div>
 </div>
